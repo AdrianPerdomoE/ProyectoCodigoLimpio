@@ -46,9 +46,20 @@ namespace TrackerUI
             mouseDown = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void textBox_MouseDown(object sender, MouseEventArgs e)
         {
-            this.Close();
+            textBox.Text = String.Empty;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void profilePictureBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
