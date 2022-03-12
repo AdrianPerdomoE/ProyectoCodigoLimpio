@@ -61,5 +61,15 @@ namespace TrackerUI
         {
 
         }
+
+        private void messagesSentListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+
+        }
     }
 }

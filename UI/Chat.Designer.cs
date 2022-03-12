@@ -147,6 +147,7 @@
             this.messagesSentListView.Size = new System.Drawing.Size(843, 338);
             this.messagesSentListView.TabIndex = 0;
             this.messagesSentListView.UseCompatibleStateImageBehavior = false;
+            this.messagesSentListView.SelectedIndexChanged += new System.EventHandler(this.messagesSentListView_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -186,7 +187,7 @@
             // 
             // profilePictureBox
             // 
-            this.profilePictureBox.Image = global::ProyectoCodigoLimpio.Properties.Resources.profile1;
+            this.profilePictureBox.Image = global::ProyectoCodigoLimpioClient.Properties.Resources.profile1;
             this.profilePictureBox.Location = new System.Drawing.Point(0, -3);
             this.profilePictureBox.Name = "profilePictureBox";
             this.profilePictureBox.Size = new System.Drawing.Size(83, 86);
