@@ -11,18 +11,18 @@ using System.Text;
 
 namespace ProyectoCodigoLimpioClient
 {
-    internal class ClientProgram
+    public class ClientProgram
     {
-        public ClientProgram(int port) 
+        public ClientProgram(int port)
         {
-            try 
+            try
             {
 
                 IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
                 IPAddress ipAddr = ipHost.AddressList[0];
-                IPEndPoint localEndPoint = new IPEndPoint(ipAddr,port);
+                IPEndPoint localEndPoint = new IPEndPoint(ipAddr, port);
 
-                Socket sender = new Socket(ipAddr.AddressFamily,SocketType.Stream, ProtocolType.Tcp);
+                Socket sender = new Socket(ipAddr.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
                 try
                 {

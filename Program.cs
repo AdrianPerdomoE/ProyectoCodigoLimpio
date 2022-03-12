@@ -1,4 +1,6 @@
-namespace TrackerUI
+using TrackerUI;
+
+namespace ProyectoCodigoLimpioClient
 {
     internal static class Program
     {
