@@ -7,11 +7,10 @@ using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using ProyectoCodigoLimpioClient.Model;
 using ProyectoCodigoLimpioClient.Net.IO;
 
-namespace ProyectoCodigoLimpioServidor
-{  
+namespace ProyectoCodigoLimpioClient.Model
+{
     public class ServerProgram
     {
         public static List<User> _Users;
@@ -19,7 +18,7 @@ namespace ProyectoCodigoLimpioServidor
         public ServerProgram(string ip, int port)
         {
             _Users = new List<User>();
-            Listener = new TcpListener(IPAddress.Parse(ip),port);
+            Listener = new TcpListener(IPAddress.Parse(ip), port);
             Listener.Start();
             while (true)
             {
@@ -27,11 +26,11 @@ namespace ProyectoCodigoLimpioServidor
                 _Users.Add(client);
                 BroadcastConnetion();
             }
-        
+
         }
-        public  static void BroadcastConnetion()
+        public static void BroadcastConnetion()
         {
-            foreach ( User user in _Users)
+            foreach (User user in _Users)
             {
                 foreach (User userIterator in _Users)
                 {
@@ -64,7 +63,7 @@ namespace ProyectoCodigoLimpioServidor
                 PacketBuilder broadcastPacket = new PacketBuilder();
                 broadcastPacket.WriteOpCode(10);
                 broadcastPacket.WriteString(userId);
-                user.ClientSocket?.Client.Send(broadcastPacket.GetPacketBytes());    
+                user.ClientSocket?.Client.Send(broadcastPacket.GetPacketBytes());
             }
             BroadcastMessage($"[{disconnectedUser.UserName}] disconnected.");
         }

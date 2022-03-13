@@ -9,7 +9,7 @@ using System.Net.Sockets;
 using System.Text;
 using ProyectoCodigoLimpioClient.Net.IO;
 
-namespace ProyectoCodigoLimpioClient
+namespace ProyectoCodigoLimpioClient.Model
 {
     public class ClientProgram
     {
@@ -18,7 +18,7 @@ namespace ProyectoCodigoLimpioClient
         public PacketReader PacketReader;
 
         public event Action userDisconnectEvent;
-        
+
         public event Action connectedEvent;
 
         public event Action messageReceivedEvent;
@@ -47,7 +47,7 @@ namespace ProyectoCodigoLimpioClient
 
         private void ReadPackets()
         {
-            Task.Run(() => 
+            Task.Run(() =>
             {
                 while (true)
                 {
@@ -58,7 +58,7 @@ namespace ProyectoCodigoLimpioClient
                             connectedEvent?.Invoke();
                             break;
                         case 5:
-                            messageReceivedEvent?.Invoke(); 
+                            messageReceivedEvent?.Invoke();
                             break;
                         case 10:
                             userDisconnectEvent?.Invoke();
@@ -66,8 +66,8 @@ namespace ProyectoCodigoLimpioClient
 
                         default:
                             Console.WriteLine("opcode not expected");
-                            break;   
-                    }  
+                            break;
+                    }
                 }
             });
         }
@@ -77,6 +77,6 @@ namespace ProyectoCodigoLimpioClient
             messagePacket.WriteOpCode(5);
             messagePacket.WriteString(Message);
             _Client.Client.Send(messagePacket.GetPacketBytes());
-        } 
+        }
     }
 }

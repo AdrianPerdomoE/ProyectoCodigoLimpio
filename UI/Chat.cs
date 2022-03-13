@@ -1,6 +1,5 @@
 using Catel.MVVM;
-using ProyectoCodigoLimpioClient;
-using ProyectoCodigoLimpioServidor;
+using ProyectoCodigoLimpioClient.Model;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reactive.Linq;
