@@ -24,6 +24,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Catel.MVVM" Version="5.12.22" />
+    <PackageReference Include="System.Reactive" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProyectoCodigoLimpioServidor\ProyectoCodigoLimpioServidor.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
