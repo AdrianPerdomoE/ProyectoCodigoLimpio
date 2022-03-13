@@ -36,6 +36,7 @@
             this.sendButton = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
             this.messagesSetPanel = new System.Windows.Forms.Panel();
+            this.listBoxMessagesReceived = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.profileLabel = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ListBoxUsers = new System.Windows.Forms.ListBox();
             this.buttonClient = new System.Windows.Forms.Button();
-            this.buttonServer = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBoxUserName = new System.Windows.Forms.TextBox();
             this.labelUserName = new System.Windows.Forms.Label();
@@ -51,7 +51,6 @@
             this.labelPort = new System.Windows.Forms.Label();
             this.LabelIP = new System.Windows.Forms.Label();
             this.textBoxIP = new System.Windows.Forms.TextBox();
-            this.listBoxMessagesReceived = new System.Windows.Forms.ListBox();
             this.headerPanel.SuspendLayout();
             this.bottomChatPanel.SuspendLayout();
             this.messagesSetPanel.SuspendLayout();
@@ -153,6 +152,17 @@
             this.messagesSetPanel.Size = new System.Drawing.Size(694, 341);
             this.messagesSetPanel.TabIndex = 2;
             // 
+            // listBoxMessagesReceived
+            // 
+            this.listBoxMessagesReceived.FormattingEnabled = true;
+            this.listBoxMessagesReceived.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.listBoxMessagesReceived.ItemHeight = 15;
+            this.listBoxMessagesReceived.Location = new System.Drawing.Point(22, -2);
+            this.listBoxMessagesReceived.Name = "listBoxMessagesReceived";
+            this.listBoxMessagesReceived.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listBoxMessagesReceived.Size = new System.Drawing.Size(669, 349);
+            this.listBoxMessagesReceived.TabIndex = 0;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
@@ -205,7 +215,6 @@
             // 
             this.panel2.Controls.Add(this.ListBoxUsers);
             this.panel2.Controls.Add(this.buttonClient);
-            this.panel2.Controls.Add(this.buttonServer);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 32);
@@ -220,32 +229,21 @@
             this.ListBoxUsers.ForeColor = System.Drawing.SystemColors.Window;
             this.ListBoxUsers.FormattingEnabled = true;
             this.ListBoxUsers.ItemHeight = 15;
-            this.ListBoxUsers.Location = new System.Drawing.Point(0, 183);
+            this.ListBoxUsers.Location = new System.Drawing.Point(0, 157);
             this.ListBoxUsers.Name = "ListBoxUsers";
-            this.ListBoxUsers.Size = new System.Drawing.Size(222, 362);
+            this.ListBoxUsers.Size = new System.Drawing.Size(222, 388);
             this.ListBoxUsers.TabIndex = 6;
             // 
             // buttonClient
             // 
             this.buttonClient.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonClient.Location = new System.Drawing.Point(0, 154);
+            this.buttonClient.Location = new System.Drawing.Point(0, 128);
             this.buttonClient.Name = "buttonClient";
             this.buttonClient.Size = new System.Drawing.Size(222, 29);
             this.buttonClient.TabIndex = 4;
-            this.buttonClient.Text = "Connect as Client";
+            this.buttonClient.Text = "Connect ";
             this.buttonClient.UseVisualStyleBackColor = true;
             this.buttonClient.Click += new System.EventHandler(this.buttonClient_Click);
-            // 
-            // buttonServer
-            // 
-            this.buttonServer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonServer.Location = new System.Drawing.Point(0, 128);
-            this.buttonServer.Name = "buttonServer";
-            this.buttonServer.Size = new System.Drawing.Size(222, 26);
-            this.buttonServer.TabIndex = 5;
-            this.buttonServer.Text = "Connect as Server";
-            this.buttonServer.UseVisualStyleBackColor = true;
-            this.buttonServer.Click += new System.EventHandler(this.buttonServer_Click);
             // 
             // panel3
             // 
@@ -315,17 +313,6 @@
             this.textBoxIP.TabIndex = 0;
             this.textBoxIP.TextChanged += new System.EventHandler(this.textBoxIP_TextChanged);
             // 
-            // listBoxMessagesReceived
-            // 
-            this.listBoxMessagesReceived.FormattingEnabled = true;
-            this.listBoxMessagesReceived.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.listBoxMessagesReceived.ItemHeight = 15;
-            this.listBoxMessagesReceived.Location = new System.Drawing.Point(22, -2);
-            this.listBoxMessagesReceived.Name = "listBoxMessagesReceived";
-            this.listBoxMessagesReceived.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBoxMessagesReceived.Size = new System.Drawing.Size(669, 349);
-            this.listBoxMessagesReceived.TabIndex = 0;
-            // 
             // Chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -372,7 +359,6 @@
         private PictureBox profilePictureBox;
         private Panel panel2;
         private Button buttonClient;
-        private Button buttonServer;
         private Panel panel3;
         private TextBox textBoxPort;
         private Label labelPort;

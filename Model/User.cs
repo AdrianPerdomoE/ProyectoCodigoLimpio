@@ -41,7 +41,7 @@ namespace ProyectoCodigoLimpioClient.Model
                         case 5:
                               var msg = _PacketReader.ReadMessage();
                               Console.WriteLine($"[{DateTime.Now}]: Message Received! {msg}");
-                              ServerProgram.BroadcastMessage(msg);
+                              ServerProgram.BroadcastMessage($"[{DateTime.Now}]: {msg}");
                             break;
                         default:
                             break;
@@ -49,7 +49,10 @@ namespace ProyectoCodigoLimpioClient.Model
                 }
                 catch (Exception ex) 
                 { 
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine($"[{UserId.ToString()}]: Disconnected!");
+                    ServerProgram.BroadcastDisconnect(UserId.ToString());
+                    ClientSocket.Close();
+                    break;
                 }
             }
         }

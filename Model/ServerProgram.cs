@@ -54,5 +54,19 @@ namespace ProyectoCodigoLimpioServidor
                 user.ClientSocket?.Client.Send(messagePacket.GetPacketBytes());
             }
         }
+        public static void BroadcastDisconnect(string userId)
+        {
+            var disconnectedUser = _Users.Where(x => x.UserId.ToString() == userId).FirstOrDefault();
+            _Users.Remove(disconnectedUser);
+
+            foreach (User user in _Users)
+            {
+                PacketBuilder broadcastPacket = new PacketBuilder();
+                broadcastPacket.WriteOpCode(10);
+                broadcastPacket.WriteString(userId);
+                user.ClientSocket?.Client.Send(broadcastPacket.GetPacketBytes());    
+            }
+            BroadcastMessage($"[{disconnectedUser.UserName}] disconnected.");
+        }
     }
 }

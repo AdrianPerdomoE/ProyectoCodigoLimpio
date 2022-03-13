@@ -17,8 +17,6 @@ namespace TrackerUI
 
         private ClientProgram _Client;
 
-        private ServerProgram _Server;
-
         private string _Message;
 
         public ObservableCollection<string> Messages;
@@ -97,21 +95,28 @@ namespace TrackerUI
             textBoxUserName.Enabled = false;
             _Client = new ClientProgram();
             _Client.ConnectToServer(_UserName, _Ip, _Port);
-            buttonServer.Enabled = false;
             buttonClient.Enabled = false;
             _Client.connectedEvent += UserConnected;
             _Client.messageReceivedEvent += MessageReceived;
+            _Client.userDisconnectEvent += UserDisconnect;
 
+        }
+
+        private void UserDisconnect()
+        {
+           //espacio para implementar que pasa cuando se desconecta un usuario
         }
 
         private void MessageReceived()
         {
+            //espacio para implementar que sucede cuando llega un mensaje desde el servidor
            var message = _Client.PacketReader.ReadMessage();
             //listBoxMessagesReceived.Items.Add(message); 
         }
 
         private void UserConnected()
         {
+            //espacio para implementar que pasa cuando un usario se conecta al servidor
            /*Dictionary<string,string> user = new();
             user.Add("UserName", _Client.PacketReader.ReadMessage());
             user.Add("UserId", _Client.PacketReader.ReadMessage());
@@ -128,15 +133,6 @@ namespace TrackerUI
         {
 
         }
-
-        private void buttonServer_Click(object sender, EventArgs e)
-        {
-            /*textBoxIP.Enabled = false;
-            textBoxPort.Enabled = false;
-            _Server = new ServerProgram(_Ip,_Port);*/
-            buttonServer.Enabled = false;
-        }
-
         private void textBoxIP_TextChanged(object sender, EventArgs e)
         {
             _Ip = textBoxIP.Text;
@@ -154,6 +150,7 @@ namespace TrackerUI
 
         private void sendButton_Click(object sender, EventArgs e)
         {
+            _Message = $"{_UserName}: " + _Message;
             _Client.SendMessageToserver(_Message);
             textBox.Text = String.Empty; 
         }

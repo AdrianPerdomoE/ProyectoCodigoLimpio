@@ -17,6 +17,8 @@ namespace ProyectoCodigoLimpioClient
 
         public PacketReader PacketReader;
 
+        public event Action userDisconnectEvent;
+        
         public event Action connectedEvent;
 
         public event Action messageReceivedEvent;
@@ -58,6 +60,10 @@ namespace ProyectoCodigoLimpioClient
                         case 5:
                             messageReceivedEvent?.Invoke(); 
                             break;
+                        case 10:
+                            userDisconnectEvent?.Invoke();
+                            break;
+
                         default:
                             Console.WriteLine("opcode not expected");
                             break;   
