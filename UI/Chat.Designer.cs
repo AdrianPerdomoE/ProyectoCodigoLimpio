@@ -279,7 +279,7 @@
             // 
             // textBoxPort
             // 
-            this.textBoxPort.Location = new System.Drawing.Point(70, 55);
+            this.textBoxPort.Location = new System.Drawing.Point(70, 50);
             this.textBoxPort.Name = "textBoxPort";
             this.textBoxPort.Size = new System.Drawing.Size(100, 23);
             this.textBoxPort.TabIndex = 3;
@@ -289,7 +289,7 @@
             // 
             this.labelPort.AutoSize = true;
             this.labelPort.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelPort.Location = new System.Drawing.Point(16, 58);
+            this.labelPort.Location = new System.Drawing.Point(16, 53);
             this.labelPort.Name = "labelPort";
             this.labelPort.Size = new System.Drawing.Size(35, 15);
             this.labelPort.TabIndex = 2;
