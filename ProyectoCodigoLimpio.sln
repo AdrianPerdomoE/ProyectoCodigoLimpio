@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProyectoCodigoLimpioClient"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntregableMensajeriaConsola", "..\EntregableMensajeriaConsola\EntregableMensajeriaConsola.csproj", "{AA7B49C5-1DC1-4596-B83F-FC65661AB57E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "..\ConsoleApp1\ConsoleApp1.csproj", "{F2D9D8AF-CBE3-4DDA-87E7-7C3A2F7AEF27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServidorConsola", "..\ConsoleApp1\ServidorConsola.csproj", "{F2D9D8AF-CBE3-4DDA-87E7-7C3A2F7AEF27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
